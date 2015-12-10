@@ -1,0 +1,5 @@
+.DS_Store
+node_modules
+.grunt
+npm-debug.log
+src/dist/*
