@@ -32,6 +32,10 @@ export default reactStub;
 
 function validateReactProps(props, realComponent, {name} = {}) {
   var propTypes = realComponent.propTypes || {};
+  var defaultProps = realComponent.defaultProps || {};
+  // This makes a map of prop values starting with defaults and finishing
+  // with instance properties.
+  var effectiveProps = {...defaultProps, ...props};
 
   Object.keys(props).forEach((key) => {
     if (typeof propTypes[key] === 'undefined') {
@@ -43,7 +47,7 @@ function validateReactProps(props, realComponent, {name} = {}) {
     let validatePropValue = propTypes[key];
     // It's not really documented but this validator is currently defined at
     // https://github.com/facebook/react/blob/master/src/isomorphic/classic/types/ReactPropTypes.js#L88
-    let error = validatePropValue(props, key, name, 'prop');
+    let error = validatePropValue(effectiveProps, key, name, 'prop');
     if (error) {
       throw error;
     }

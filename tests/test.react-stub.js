@@ -7,6 +7,10 @@ import reactStub from 'react-stub';
 
 describe('reactStub', function() {
 
+  it('requires a truthy component', function() {
+    expect(() => reactStub()).to.throw(/realComponent is undefined/);
+  });
+
   it('renders a stub component', function() {
     class RealComponent extends Component {
       render() {
@@ -110,6 +114,47 @@ describe('reactStub', function() {
     let msg = /Required prop `foo` was not specified in `Fake:RealComponent`/;
     let Fake = reactStub(RealComponent);
     expect(() => ReactTestUtils.renderIntoDocument(<Fake/>)).to.throw(msg);
+  });
+
+  it('allows you to skip default values', function() {
+    class RealComponent extends Component {
+      static propTypes = {
+        foo: PropTypes.string.isRequired,
+      }
+      static defaultProps = {
+        foo: 'default value',
+      }
+      render() {
+        return <div/>;
+      }
+    }
+
+    var Fake = reactStub(RealComponent);
+    // No error thrown.
+    ReactTestUtils.renderIntoDocument(<Fake/>);
+  });
+
+  it('prefers actual prop values rather than defaults', function() {
+    class RealComponent extends Component {
+      static propTypes = {
+        foo: PropTypes.string.isRequired,
+      }
+      static defaultProps = {
+        foo: 'default value',
+      }
+      render() {
+        return <div/>;
+      }
+    }
+
+    let msg = new RegExp(
+      'Invalid prop `foo` of type `number` supplied to ' +
+      '`Fake:RealComponent`, expected `string`');
+    let Fake = reactStub(RealComponent);
+    expect(() => {
+        ReactTestUtils.renderIntoDocument(<Fake foo={9999} />)
+      })
+      .to.throw(msg);
   });
 
 });
