@@ -32,13 +32,6 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    // fetch polyfill: http://mts.io/2015/04/08/webpack-shims-polyfills/
-    // relies on imports-loader and exports-loader in node_modules
-    new webpack.ProvidePlugin({
-      'Promise': 'imports?this=>global!exports?global.fetch!es6-promise',
-    }),
-  ],
   resolve: {
     extensions: ['', '.js', '.jsx'],
     modulesDirectories: [

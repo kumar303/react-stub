@@ -5,48 +5,7 @@ import ReactTestUtils from 'react-addons-test-utils';
 import reactStub from 'react-stub';
 
 
-describe('faked objects from instances', function() {
-
-  it('prevents you from calling unknown methods', function() {
-    var fake = reactStub({});
-    expect(() => fake.nonExistant()).to.throw(/nonExistant is not a function/);
-  });
-
-  it('prevents you from calling objects', function() {
-    var fake = reactStub({});
-    expect(() => fake()).to.throw(/Fake:Object is not a function/);
-  });
-
-  it('allows you to call existing methods', function() {
-    var fake = reactStub({something: () => null});
-    fake.something();
-    expect(fake.something.called).to.be.equal(true);
-  });
-
-  it('allows you to access real attributes', function() {
-    var fake = reactStub({something: 'value'});
-    expect(fake.something).to.be.equal('value');
-  });
-
-  it('allows you to access nulls', function() {
-    var fake = reactStub({something: null});
-    expect(fake.something).to.be.equal(null);
-  });
-
-  it('allows you to access false values', function() {
-    var fake = reactStub({something: false});
-    expect(fake.something).to.be.equal(false);
-  });
-
-  it('allows you to access numbers', function() {
-    var fake = reactStub({answer: 42});
-    expect(fake.answer).to.be.equal(42);
-  });
-
-});
-
-
-describe('faked react components', function() {
+describe('reactStub', function() {
 
   it('renders a stub component', function() {
     class RealComponent extends Component {
