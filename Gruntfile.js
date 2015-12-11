@@ -11,8 +11,7 @@ module.exports = function(grunt) {
   grunt.initConfig(configs);
 
   grunt.registerTask('build', ['clean:dist', 'webpack']);
-  grunt.registerTask('lint', 'Run all lint checks',
-                     ['eslint', 'csslint:lax']);
+  grunt.registerTask('lint', 'Run all lint checks', ['eslint']);
   grunt.registerTask('test', 'Run the unit tests and lint checks',
                      ['karma:run', 'lint']);
   grunt.registerTask('watch-test', 'Watches files and runs tests',
