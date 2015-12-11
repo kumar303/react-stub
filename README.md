@@ -11,11 +11,13 @@ You create a stub component out of a real component. The stub is just a normal
 React component -- you can render it, nest it, inspect its properties,
 do whatever you want. Example:
 
-    // Pretend this is something in your app:
-    import Login from 'components/login';
+```javascript
+// Pretend this is something in your app:
+import Login from 'components/login';
 
-    import reactStub from 'react-stub';
-    let LoginStub = reactStub(Login);
+import reactStub from 'react-stub';
+let LoginStub = reactStub(Login);
+```
 
 ## Install
 
@@ -51,37 +53,41 @@ Imagine you have an `App` component that relies on a `Login` component. If you w
 to test `App` in isolation, the first thing you need to do is
 re-design your `App` class to accept a stubbed dependency:
 
-    import React, { Component, PropTypes } from 'react';
+```javascript
+import React, { Component, PropTypes } from 'react';
 
-    // Import the real component for reference.
-    import DefaultLogin from 'components/login';
+// Import the real component for reference.
+import DefaultLogin from 'components/login';
 
-    export default class App extends Component {
-      static propTypes = {
-        Login: PropTypes.object.isRequired,
-      }
-      static defaultProps = {
-        // When not testing, the real Login is used.
-        Login: DefaultLogin,
-      }
-      render() {
-        let Login = this.props.Login;
-        return <Login/>;
-      }
-    }
+export default class App extends Component {
+  static propTypes = {
+    Login: PropTypes.object.isRequired,
+  }
+  static defaultProps = {
+    // When not testing, the real Login is used.
+    Login: DefaultLogin,
+  }
+  render() {
+    let Login = this.props.Login;
+    return <Login/>;
+  }
+}
+```
 
 This component design allows you to inject a stub component while testing, like
 this:
 
-    import ReactTestUtils from 'react-addons-test-utils';
-    import RealLogin from 'components/login';
+```javascript
+import ReactTestUtils from 'react-addons-test-utils';
+import RealLogin from 'components/login';
 
-    import reactStub from 'react-stub';
+import reactStub from 'react-stub';
 
-    let LoginStub = reactStub(RealLogin);
-    ReactTestUtils.renderIntoDocument(
-      <App Login={LoginStub} />
-    );
+let LoginStub = reactStub(RealLogin);
+ReactTestUtils.renderIntoDocument(
+  <App Login={LoginStub} />
+);
+```
 
 If the stub gets used incorrectly, you'll see an exception when the top level
 component gets rendered.
