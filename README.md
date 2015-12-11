@@ -109,3 +109,7 @@ To run a test suite once, run:
 To check for lint errors, run:
 
     grunt eslint
+
+To build a distribution from source, run:
+
+    grunt build
