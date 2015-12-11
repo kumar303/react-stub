@@ -78,19 +78,33 @@ This component design allows you to inject a stub component while testing, like
 this:
 
 ```javascript
-import ReactTestUtils from 'react-addons-test-utils';
-import RealLogin from 'components/login';
+// Pretend these are custom components for your app.
+import App from 'components/app';
+import Login from 'components/login';
 
+import ReactTestUtils from 'react-addons-test-utils';
 import reactStub from 'react-stub';
 
-let LoginStub = reactStub(RealLogin);
+let LoginStub = reactStub(Login);
 ReactTestUtils.renderIntoDocument(
   <App Login={LoginStub} />
 );
 ```
 
 If the stub gets used incorrectly, you'll see an exception when the top level
-component gets rendered.
+component gets rendered. For example, if you pass an unexpected attribute,
+you'll see an error:
+
+```javascript
+ReactTestUtils.renderIntoDocument(
+  <LoginStub userId={321} />
+);
+```
+
+```
+...
+reactStub:Login does not accept property userId
+```
 
 [prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
 

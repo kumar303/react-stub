@@ -67,7 +67,7 @@ describe('reactStub', function() {
     expect(() => ReactTestUtils.renderIntoDocument(
         <Fake wrongAttr="non-existant" />
       ))
-      .to.throw(/faked component does not accept property wrongAttr/);
+      .to.throw(/reactStub:RealComponent does not accept property wrongAttr/);
   });
 
   it('allows you to set a known property', function() {

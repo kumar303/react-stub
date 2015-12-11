@@ -37,7 +37,7 @@ function validateReactProps(props, realComponent, {name} = {}) {
 
   Object.keys(props).forEach((key) => {
     if (typeof propTypes[key] === 'undefined' && key !== 'children') {
-      throw new Error(`faked component does not accept property ${key}`);
+      throw new Error(`${name} does not accept property ${key}`);
     }
   });
 
