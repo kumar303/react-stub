@@ -151,9 +151,9 @@ describe('reactStub', function() {
       'Invalid prop `foo` of type `number` supplied to ' +
       '`Fake:RealComponent`, expected `string`');
     let Fake = reactStub(RealComponent);
-    expect(() => {
-        ReactTestUtils.renderIntoDocument(<Fake foo={9999} />)
-      })
+    expect(() => ReactTestUtils.renderIntoDocument(
+        <Fake foo={9999} />
+      ))
       .to.throw(msg);
   });
 
