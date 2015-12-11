@@ -20,15 +20,8 @@ module.exports = {
       {
         exclude: /(node_modules|bower_components)/,
         test: /\.jsx?$/,
-        loaders: [
-          'babel?' +
-          // es7.objectRestSpread to enable ES7 rest spread operators
-          // eg: let { x, y, ...z } = { x: 1, y: 2, a: 3, b: 4 };
-          'optional[]=es7.objectRestSpread&' +
-          'optional[]=es7.classProperties&' +
-          // ES2015
-          'stage=2'
-        ],
+        // See .babelrc for configuration.
+        loaders: ['babel'],
       },
     ],
   },
