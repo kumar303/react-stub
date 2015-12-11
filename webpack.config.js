@@ -25,7 +25,7 @@ module.exports = {
     path: path.join(__dirname, 'dist/'),
     filename: '[name].js',
     sourceMapFilename: '[file].map',
-    libraryTarget: 'umd',
+    libraryTarget: 'commonjs2',
   },
   externals: nodeModules,
   module: {
