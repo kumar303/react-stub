@@ -36,8 +36,8 @@ Here is an overview of error feedback you get when running tests:
   [PropTypes][prop-types] then you'll get an error.
 * If you assign an invalid property value on the stub component you'll see a
   [PropTypes][prop-types] validation error.
-* If a component forgets to declare a required property on a sub-component,
-  you'll also see a [PropTypes][prop-types] validation error.
+* If a component forgets to declare a required property on a stubbed
+  sub-component, you'll also see a [PropTypes][prop-types] validation error.
 
 ## Components that use other components
 
