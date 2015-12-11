@@ -27,7 +27,10 @@ module.exports = {
     sourceMapFilename: '[file].map',
     libraryTarget: 'commonjs2',
   },
-  externals: nodeModules,
+  // Hmm. This is supposed to remove react from the webpack bundle but it
+  // seems to trip up karma and always result in 'require is not defined'
+  // when the tests run.
+  //externals: nodeModules,
   module: {
     loaders: [
       {
