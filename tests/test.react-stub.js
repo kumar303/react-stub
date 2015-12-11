@@ -36,6 +36,23 @@ describe('reactStub', function() {
     ReactTestUtils.findRenderedComponentWithType(container, Fake);
   });
 
+  it('lets you add children to the stub', function() {
+    class RealComponent extends Component {
+      render() {
+        return <span>real</span>;
+      }
+    }
+
+    var Fake = reactStub(RealComponent);
+    var NestedFake = reactStub(RealComponent);
+    // No errors.
+    ReactTestUtils.renderIntoDocument(
+      <Fake>
+        <NestedFake/>
+      </Fake>
+    );
+  });
+
   it('prevents you from setting an unknown property', function() {
     class RealComponent extends Component {
       static propTypes = {
