@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-function reactStub(realComponent, {name} = {}) {
+export default function reactStub(realComponent, {name} = {}) {
   if (!name) {
     if (realComponent.name) {
       name = realComponent.name;  // ES6 class name
@@ -26,8 +26,6 @@ function reactStub(realComponent, {name} = {}) {
 
   return FakeComponent;
 }
-
-export default reactStub;
 
 
 function validateReactProps(props, realComponent, {name} = {}) {
