@@ -10,10 +10,10 @@ module.exports = {
   },
   failOnError: true,
   output: {
-    path: path.join(__dirname, 'src/dist/'),
-    filename: '[name].bundle.js',
-    publicPath: '/dist/',
+    path: path.join(__dirname, 'dist/'),
+    filename: '[name].js',
     sourceMapFilename: '[file].map',
+    libraryTarget: 'umd',
   },
   module: {
     loaders: [

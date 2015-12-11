@@ -36,5 +36,5 @@
   "scripts": {
     "test": "node -e \"require('grunt').cli()\" null test"
   },
-  "license": "MPL-2.0"
+  "license": "MIT"
 }

@@ -11,8 +11,8 @@ module.exports = {
   },
   prod: {
     output: {
-      path: path.join(__dirname, '../src/dist/'),
-      filename: '[name].bundle.min.js',
+      path: path.join(__dirname, '../dist/'),
+      filename: '[name].min.js',
     },
     plugins: [
       new webpack.optimize.UglifyJsPlugin({minimize: true}),

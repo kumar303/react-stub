@@ -3,6 +3,6 @@ module.exports = {
     'src',
   ],
   dist: [
-    'src/dist',
+    'dist',
   ],
 };
