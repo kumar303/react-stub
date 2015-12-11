@@ -43,11 +43,13 @@ Here is an overview of error feedback you get when running tests:
 * If a component forgets to declare a required property on a stubbed
   sub-component, you'll also see a [PropTypes][prop-types] validation error.
 
-## Components that use other components
+## Make sure your app uses components correctly
 
 A good case for stubbed components is when you have one component that depends
 on another but you want to unit test each of them independently. Stubbing out
-the one you're not testing helps keep your test suite lean and fast.
+the one you're not testing helps you focus on the interface of the dependent
+component, which is typically its properties. This also helps
+keep your test suite lean and fast.
 
 Imagine you have an `App` component that relies on a `Login` component. If you want
 to test `App` in isolation, the first thing you need to do is
