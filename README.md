@@ -85,3 +85,27 @@ If the stub gets used incorrectly, you'll see an exception when the top level
 component gets rendered.
 
 [prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
+
+## Development
+
+Clone the source, install [NodeJS](https://nodejs.org/en/),
+and run this from the source directory to install the dependency modules:
+
+    npm install
+
+Make sure you have [grunt](http://gruntjs.com/)
+installed and on your path. Otherwise, run this:
+
+    npm install -g grunt
+
+To run the tests each time you edit a file, run:
+
+    grunt watch-test
+
+To run a test suite once, run:
+
+    grunt test
+
+To check for lint errors, run:
+
+    grunt eslint
