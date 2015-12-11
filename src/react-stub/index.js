@@ -11,7 +11,7 @@ export default function reactStub(realComponent, {name} = {}) {
     if (!name) {
       name = 'object';
     }
-    name = `Fake:${name}`;
+    name = `reactStub:${name}`;
   }
 
   class FakeComponent extends Component {

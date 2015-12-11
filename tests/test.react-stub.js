@@ -111,7 +111,7 @@ describe('reactStub', function() {
 
     let msg = new RegExp(
       'Invalid prop `foo` of type `number` supplied to '+
-      '`Fake:RealComponent`, expected `string`'
+      '`reactStub:RealComponent`, expected `string`'
     );
     let Fake = reactStub(RealComponent);
     expect(() => ReactTestUtils.renderIntoDocument(<Fake foo={5} />))
@@ -128,7 +128,8 @@ describe('reactStub', function() {
       }
     }
 
-    let msg = /Required prop `foo` was not specified in `Fake:RealComponent`/;
+    let msg = new RegExp(
+      'Required prop `foo` was not specified in `reactStub:RealComponent`');
     let Fake = reactStub(RealComponent);
     expect(() => ReactTestUtils.renderIntoDocument(<Fake/>)).to.throw(msg);
   });
@@ -166,7 +167,7 @@ describe('reactStub', function() {
 
     let msg = new RegExp(
       'Invalid prop `foo` of type `number` supplied to ' +
-      '`Fake:RealComponent`, expected `string`');
+      '`reactStub:RealComponent`, expected `string`');
     let Fake = reactStub(RealComponent);
     expect(() => ReactTestUtils.renderIntoDocument(
         <Fake foo={9999} />
