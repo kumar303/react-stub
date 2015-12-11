@@ -3,6 +3,8 @@
 A stubbing tool that leads to safer and more maintainable
 [React](https://facebook.github.io/react/) unit tests.
 
+[![Build Status](https://travis-ci.org/kumar303/react-stub.svg?branch=master)](https://travis-ci.org/kumar303/react-stub)
+
 ## How it works
 
 You create a stub component out of a real component. The stub is just a normal
