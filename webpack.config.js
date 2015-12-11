@@ -1,7 +1,19 @@
-'use strict';
-
-var path = require('path');
 var webpack = require('webpack');
+var path = require('path');
+var fs = require('fs');
+
+var nodeModules = {};
+
+// This is to filter out node_modules as we don't want them
+// to be made part of any webpack bundles.
+fs.readdirSync('node_modules')
+  .filter(function(x) {
+    return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = 'commonjs ' + mod;
+  });
+
 
 module.exports = {
   devtool: 'source-map',
@@ -15,6 +27,7 @@ module.exports = {
     sourceMapFilename: '[file].map',
     libraryTarget: 'umd',
   },
+  externals: nodeModules,
   module: {
     loaders: [
       {

@@ -6,16 +6,7 @@ var webpackConfig = require('../webpack.config.js');
 
 module.exports = {
   options: webpackConfig,
-  dev: {
+  dist: {
     // Default to all the options in webpackConfig
-  },
-  prod: {
-    output: {
-      path: path.join(__dirname, '../dist/'),
-      filename: '[name].min.js',
-    },
-    plugins: [
-      new webpack.optimize.UglifyJsPlugin({minimize: true}),
-    ],
   },
 };

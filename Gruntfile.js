@@ -10,7 +10,7 @@ module.exports = function(grunt) {
 
   grunt.initConfig(configs);
 
-  grunt.registerTask('build', ['clean:dist', 'webpack']);
+  grunt.registerTask('build', ['clean:dist', 'webpack:dist']);
   grunt.registerTask('lint', 'Run all lint checks', ['eslint']);
   grunt.registerTask('test', 'Run the unit tests and lint checks',
                      ['karma:run', 'lint']);
