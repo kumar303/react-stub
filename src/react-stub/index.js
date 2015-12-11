@@ -14,17 +14,17 @@ export default function reactStub(realComponent, {name} = {}) {
     name = `reactStub:${name}`;
   }
 
-  class FakeComponent extends Component {
+  class ReactStub extends Component {
     constructor(props) {
       super(props);
       validateReactProps(props, realComponent, {name});
     }
     render() {
-      return <span>This is a fake component</span>;
+      return <span>This is a stub component</span>;
     }
   }
 
-  return FakeComponent;
+  return ReactStub;
 }
 
 
