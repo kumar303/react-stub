@@ -114,6 +114,32 @@ ReactTestUtils.renderIntoDocument(
 reactStub:Login does not accept property userId
 ```
 
+## Deeper property inspection
+
+If you want to go beyond simply verifying the [PropTypes][prop-types] of the
+stubbed component, you can use typical React testing approaches. For example:
+
+```javascript
+// Pretend these are custom components for your app.
+import App from 'components/app';
+import Login from 'components/login';
+
+import ReactTestUtils from 'react-addons-test-utils';
+import reactStub from 'react-stub';
+
+let LoginStub = reactStub(Login);
+let renderedApp = ReactTestUtils.renderIntoDocument(
+  <App Login={LoginStub} />
+);
+
+let renderedLogin = ReactTestUtils.findRenderedComponentWithType(
+  renderedApp, LoginStub
+);
+
+// You could now make assertions about `renderedLogin.props` ...
+
+```
+
 ## Development
 
 Clone the source, install [NodeJS](https://nodejs.org/en/),
