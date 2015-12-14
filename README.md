@@ -168,11 +168,18 @@ To build a distribution from source, run:
 
     grunt build
 
+## Distribution
 
-[react]: https://facebook.github.io/react/
-[prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
+To create a new release:
+
+* Increment the version in `package.json`, commit, and push.
+* Tag the code at the version (like `git tag 0.0.1`) and push the tag.
+* Run `npm publish`.
 
 ## Release history
 
 * `0.0.1` (2015-12-14)
   * Initial release!
+
+[react]: https://facebook.github.io/react/
+[prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
