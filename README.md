@@ -27,9 +27,6 @@ let LoginStub = reactStub(Login);
 
 * Your app needs to be using [React][react] `0.14` or greater
   (until [issue 2](https://github.com/kumar303/react-stub/issues/2) is resolved).
-* You need to write your app in [ES2015](https://babeljs.io/docs/learn-es2015/)
-  so you can import (and transpile) `react-stub`
-  (until [issue 3](https://github.com/kumar303/react-stub/issues/3) is resolved).
 
 ## Safer and more maintainable tests
 
@@ -172,11 +169,18 @@ To build a distribution from source, run:
 
 To create a new release:
 
-* Increment the version in `package.json`, commit, and push.
-* Tag the code at the version (like `git tag 0.0.1`) and push the tag.
+* Increment the version in `package.json`.
+* Make sure the release history section in `README.md` is up to date.
+* Commit and push your changes.
+* Tag the version (like `git tag 0.0.1`) and push the tag with
+  `git push --tags`.
+* Run `grunt build` to create a common JS distribution (in the `dist` folder).
 * Run `npm publish`.
 
 ## Release history
+
+* `0.0.2` (2015-12-14)
+  * Provide a proper common JS distribution, i.e. no transpilation required.
 
 * `0.0.1` (2015-12-14)
   * Initial release!

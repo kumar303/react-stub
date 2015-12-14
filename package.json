@@ -1,8 +1,8 @@
 {
   "name": "react-stub",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A stubbing tool that leads to safer and more maintainable React unit tests",
-  "main": "src/react-stub/index.js",
+  "main": "dist/react-stub.js",
   "dependencies": {
     "react": "^0.14.3"
   },
