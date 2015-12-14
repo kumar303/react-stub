@@ -8,6 +8,7 @@ var newWebpackConfig = merge({}, webpackConfig);
 // that we don't want for tests.
 delete newWebpackConfig.output;
 delete newWebpackConfig.entry;
+delete newWebpackConfig.externals;
 
 newWebpackConfig.plugins = [];
 
