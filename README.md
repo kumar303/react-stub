@@ -171,3 +171,8 @@ To build a distribution from source, run:
 
 [react]: https://facebook.github.io/react/
 [prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
+
+## Release history
+
+* `0.0.1` (2015-12-14)
+  * Initial release!
