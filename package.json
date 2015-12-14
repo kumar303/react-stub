@@ -28,6 +28,7 @@
     "karma-webpack": "1.7.0",
     "load-grunt-configs": "0.4.3",
     "load-grunt-tasks": "3.2.0",
+    "lodash.merge": "3.3.2",
     "mocha": "2.3.3",
     "react-addons-test-utils": "0.14.3",
     "sinon": "git://github.com/sinonjs/sinon#v2.0.0-pre",
