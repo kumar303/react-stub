@@ -69,7 +69,7 @@ import DefaultLogin from 'components/login';
 
 export default class App extends Component {
   static propTypes = {
-    Login: PropTypes.object.isRequired,
+    Login: PropTypes.func.isRequired,
   }
   static defaultProps = {
     // When not testing, the real Login is used.
