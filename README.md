@@ -1,7 +1,7 @@
 # React Stub
 
 A stubbing tool that leads to safer and more maintainable
-[React](https://facebook.github.io/react/) unit tests.
+[React][react] unit tests.
 
 [![Build Status](https://travis-ci.org/kumar303/react-stub.svg?branch=master)](https://travis-ci.org/kumar303/react-stub)
 
@@ -23,7 +23,13 @@ let LoginStub = reactStub(Login);
 
     npm install --save-dev react-stub
 
-The code is written in ES2015 and transpiled with babel and webpack.
+## Requirements
+
+* Your app needs to be using [React][react] `0.14` or greater
+  (until [issue 2](https://github.com/kumar303/react-stub/issues/2) is resolved).
+* You need to write your app in [ES2015](https://babeljs.io/docs/learn-es2015/)
+  so you can import (and transpile) `react-stub`
+  (until [issue 3](https://github.com/kumar303/react-stub/issues/3) is resolved).
 
 ## Safer and more maintainable tests
 
@@ -108,8 +114,6 @@ ReactTestUtils.renderIntoDocument(
 reactStub:Login does not accept property userId
 ```
 
-[prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
-
 ## Development
 
 Clone the source, install [NodeJS](https://nodejs.org/en/),
@@ -137,3 +141,7 @@ To check for lint errors, run:
 To build a distribution from source, run:
 
     grunt build
+
+
+[react]: https://facebook.github.io/react/
+[prop-types]: https://facebook.github.io/react/docs/reusable-components.html#prop-validation
