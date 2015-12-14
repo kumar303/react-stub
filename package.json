@@ -4,7 +4,7 @@
   "description": "A stubbing tool that leads to safer and more maintainable React unit tests",
   "main": "src/react-stub/index.js",
   "dependencies": {
-    "react": "^0.14.1"
+    "react": "0.14.3"
   },
   "devDependencies": {
     "babel-core": "5.8.23",
