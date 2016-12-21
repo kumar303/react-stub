@@ -5,6 +5,9 @@ A stubbing tool that leads to safer and more maintainable
 
 [![Build Status](https://travis-ci.org/kumar303/react-stub.svg?branch=master)](https://travis-ci.org/kumar303/react-stub)
 
+**MESSAGE FROM THE FUTURE: I don't use this much anymore.**
+**I prefer relying on strong typing with [Flow](https://flowtype.org/) to achieve the same goals. ~Kumar**
+
 ## How it works
 
 You create a stub component out of a real component. The stub is just a normal
