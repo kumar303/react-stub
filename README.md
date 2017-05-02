@@ -1,5 +1,7 @@
 # React Stub
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/kumar303/react-stub.svg)](https://greenkeeper.io/)
+
 A stubbing tool that leads to safer and more maintainable
 [React][react] unit tests.
 
